@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    max-width: 52vw;
+    font-size: 15px;
+    margin: 56px auto
+}
+
+.about-container {
+    box-sizing: border-box;
+    margin: 109px 0px;
+    padding: 0;
+}
+
+.about-container img {
+    float: left;
+    margin: 20px 50px;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+
+footer {
+    display: flex;
+    margin-top: 130px;
+    padding: 20px;
+    background-image: linear-gradient(to bottom, white, #6d6d65);
+
+}

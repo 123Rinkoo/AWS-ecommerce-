@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECommerce</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="store.css">
+    <script src="storing.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="store.html">Store</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="orders.html">Orders</a></li>
+            <a class="cart-holder" href="#" onclick="ShowingCart()">CART <span class="cart-number"></span></a>
+            <div id="planty"></div>
+        </ul>
+    </header>
+    <section id="plants" class="container">
+
+        <h2>PLANTS</h2>
+
+        <div id="Product-content">
+            <!-- <div id="plant1">
+                <h3>Plant 1</h3>
+                <div class="image-container">
+                    <img class="prod-images"
+                        src="https://images.unsplash.com/photo-1668584339163-6de0f64a8ffa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=444&q=80"
+                        alt="">
+                </div>
+                <div class="prod-details">
+                    <span>$12.99</span>
+                </div>
+                <button class="shop-item-button" type="button">ADD TO CART</button>
+            </div>
+            <div id="plant2">
+                <h3>Plant 2</h3>
+                <div class="image-container">
+                    <img class="prod-images"
+                        src="https://images.unsplash.com/photo-1668526450019-ae9924b3ac4b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80"
+                        alt="">
+                </div>
+                <div class="prod-details">
+                    <span>$<span>14.99</span></span>
+                </div>
+                <button class="shop-item-button" type="button">ADD TO CART</button>
+            </div>
+            <div id="plant3">
+                <h3>Plant 3</h3>
+                <div class="image-container">
+                    <img class="prod-images"
+                    src="https://images.unsplash.com/photo-1647631703099-7b083ade285a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80"
+                    alt="">
+                </div>
+                <div class="prod-details">
+                    <span>$<span>9.99</span></span>
+                </div>
+                <button class="shop-item-button" type="button">ADD TO CART</button>
+            </div>
+            
+            <div id="plant4">
+                <h3>Plant 4</h3>
+                <div class="image-container">
+                    <img class="prod-images"
+                    src="https://images.unsplash.com/photo-1650522610607-225cecaff196?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80"
+                    alt="">
+                </div>
+                <div class="prod-details">
+                    <span>$<span>19.99</span></span>
+                </div>
+                <button class="shop-item-button" type="button">ADD TO CART</button>
+            </div> -->
+        </div>
+        <div id="container"></div>
+       
+        <div id="pagination"></div>
+    </section>
+    <section id="cart" class="container" style="display: none;">
+        <h2 onclick="whenCartButtonClick(event)">CART</h2>
+        <button onclick="CartCancel()" class="cancel">X</button>
+        <div class="cart-row cart-header">
+            <span class="cart-item cart-column">ITEM</span>
+            <span class="cart-price cart-column">PRICE</span>
+            <span class="cart-quantity cart-column">QUANTITY</span>
+        </div>
+        <div class="cart-items"></div>
+        <div class="cart-total">
+            <span>
+                <span class="total-title"> <strong>Total</strong>
+                </span>
+                $<span id="total-value">-.--</span>
+            </span>
+        </div>
+        <button class="purchase-btn" type="button" onclick="SavingOrderDetails()">ORDER NOW</button>
+    </section>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
+</html>
