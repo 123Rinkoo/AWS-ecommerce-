@@ -1,17 +1,17 @@
 window.onload = function () {
     event.preventDefault();
-    //     axios.get('http://localhost:3000/products')
+    //     axios.get('http://52.194.241.2:3000/products')
     //         .then(Cdata => showingOnScreen(Cdata.data))
     //         .catch(err => console.log(err));
     let pagenumber = 1;
-    axios.get(`http://localhost:3000/products?paaag=${pagenumber}`)
+    axios.get(`http://52.194.241.2:3000/products?paaag=${pagenumber}`)
         .then(res => {
             showingOnScreen(res.data.Products);
             ShowingPagination(res.data);
         })
         .catch(err => console.log(err));
 
-    axios.get('http://localhost:3000/cart')
+    axios.get('http://52.194.241.2:3000/cart')
         .then((CartProducts) => {
             addingToCard(CartProducts.data)
         })
@@ -41,7 +41,7 @@ function showingOnScreen(YourProducts) {
 function whenCartButtonClick(event) {
     console.log("working")
     event.preventDefault();
-    axios.get('http://localhost:3000/cart')
+    axios.get('http://52.194.241.2:3000/cart')
         .then((CartProducts) => {
             addingToCard(CartProducts.data)
         })
@@ -71,7 +71,7 @@ function ShowingPagination({ currentPage, hasNextPage, nextPage, hasPreviousPage
 }
 
 function getproducts(page) {
-    axios.get(`http://localhost:3000/products?paaag=${page}`)
+    axios.get(`http://52.194.241.2:3000/products?paaag=${page}`)
         .then(res => {
             showingOnScreen(res.data.Products);
             ShowingPagination(res.data);
@@ -80,7 +80,7 @@ function getproducts(page) {
 }
 
 function addToCart(productId) {
-    axios.post('http://localhost:3000/cart', { productId: productId })
+    axios.post('http://52.194.241.2:3000/cart', { productId: productId })
         .then((response) => {
             if (response.status === 200) {
                 notifyUsers(response.data.message);
@@ -129,7 +129,7 @@ function addingToCard(CartData) {
 }
 
 function SavingOrderDetails() {
-    axios.post("http://localhost:3000/create-order")
+    axios.post("http://52.194.241.2:3000/create-order")
         .then(res => {
             console.log(res)
             orderNotification(res.data.message);
@@ -151,7 +151,7 @@ function orderNotification(message) {
 function ShowingCart() {
     const id = document.getElementById('cart');
     id.style = "display: block";
-    // axios.get('http://localhost:3000/cart')
+    // axios.get('http://52.194.241.2:3000/cart')
     //     .then((CartProducts) => {
     //         addingToCard(CartProducts.data)
     //     })

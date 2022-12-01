@@ -1,6 +1,6 @@
 window.onload = function () {
     console.log('i am here')
-    axios.get('http://localhost:3000/orders')
+    axios.get('http://52.194.241.2:3000/orders')
         .then(res => {
             DisplayingOrderRecord(res.data);
             console.log(res.data)
